@@ -1,0 +1,346 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body logo nav{
+    position: fixed;
+}
+body{
+    background-color:black;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 22px;
+    box-shadow: 0px 2px 6px 2px black;
+    color: white;
+}
+nav ul li a{
+    margin-inline: 18px;
+    text-decoration: none;
+    color: white;
+}
+nav ul{
+    margin-right: 48px;
+    margin-top: 6px;
+
+}
+.logo img{
+    width: 150px;
+    margin-left: 18px;
+    
+ }
+ul li button{
+    width: 100px;
+    height: 33px;
+    background-color: rgb(11, 188, 11);
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+ul li button:hover{
+    border:2px solid white;
+    background-color:transparent; 
+    color: green;
+    cursor: pointer;
+}
+
+
+
+body {
+ 
+  padding: 50px 0;
+}
+
+.nav {
+  font-family: 'Titillium Web';
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+}
+
+.nav * {
+  box-sizing: border-box;
+  transition: all .35s ease;
+}
+
+.nav li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: .5em 1em;
+  padding: 0;
+}
+
+.nav a {
+  padding: .5em .8em;
+  color: rgba(255,255,255,.5);
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav a::before,
+.nav a::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+}
+
+.nav a::before {
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 3px solid #3E8914;
+  border-right: 3px solid #2E640F;
+  transform: translate(-100%, 50%);
+}
+
+.nav a:after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #2E640F;
+  border-left: 3px solid #3E8914;
+  transform: translate(100%, -50%)
+}
+
+.nav a:hover:before,
+.nav a:hover:after{
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+.nav a:hover {
+  color: #1fe15c;
+}
+/* main */
+.home{
+    display:flex;
+    justify-content: center;
+}
+.home img{
+    width: 59%;
+    margin-top: 80px;
+    margin-right: 174px;
+}
+.home .hometext{
+    margin-top: 80px;
+    margin-left: 145px;
+    font-size: 20px;
+    
+}
+.hometext h1{
+    font-size: 85px;
+    color: rgb(39, 239, 49);
+}
+.hometext h2{
+    margin-top:8px;
+    color: rgb(13, 245, 206);
+}
+.hometext p{
+    margin-top: 5px;
+    color: silver;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    
+.hometext button{
+    margin-top: 15px;
+    font-size: 22px;
+    width: 140px;
+    height:4px;
+    background-color: rgb(48, 236, 48);
+    color:white;
+    border:none;
+}
+.example_d {
+    color: #021111 !important;
+    text-transform: uppercase;
+    background: #f6f1f1;
+    padding: 15px;
+    border: 4px solid #20bf6b !important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+    .example_d:hover {
+    color: #494949 !important;
+    border-radius: 30px;
+    border-color: #15ebe7 !important;
+    transition: all 0.3s ease 0s;
+}
+
+.head{
+    text-align: center;
+    padding: 95px;
+}
+.head span{
+    color: rgb(22, 237, 22);
+}
+.ourprogram{
+    display: flex;
+    justify-content: center;
+}
+.ourprogram .crd{
+    margin-inline: 22px;
+    text-align: center;
+}
+
+  
+.ourprogram .crd img:hover{
+    width: 103%;
+}
+  /*plan of our website*/
+  .Ourplan{
+    display: flex;
+    justify-content: center;
+ }  
+ .Ourplan .card{
+    width: 300px;
+    height: 430px;
+    padding: 4px;
+    background-color: rgb(79, 76, 79);
+    text-align: center;
+    margin-inline:22px;
+ }
+ .card i{
+    font-size: 22px;
+    margin-top: 22px;
+    color: orange;
+ }
+ .card h1{
+    margin-top: 22px;
+    color: rgb(40, 251, 40);
+
+ }
+ .card h3{
+    margin-top: 22px;
+    color: rgb(29, 235, 29);
+
+ }
+ .card p{
+    margin-top: 22px;
+    color: silver;
+ }
+ .card button{
+    margin-top: 22px;
+    width: 130px;
+    height: 38px;
+    background-color: orange;
+    border: none;
+    color: white;
+    font-size: 18px;
+
+ }  
+ .card button:hover{
+    border: 2px solid white;
+    background-color: transparent;
+    color: rgb(22, 237, 22);
+    cursor: pointer;
+ }
+ .card:hover{
+    transition: 0.2s ease;
+    width: 310px;
+    height: 440px;
+    background-color: rgb(15, 15, 15);
+    font-size: 19px;
+ } 
+/*read blog*/
+.ourblog{
+    display: flex;
+    justify-content: center;
+
+}
+.ourblog .Blogcard{
+    width:300px;
+    height: 400px;
+    margin-inline: 22px;
+    background-color: rgb(75, 75, 75);
+
+
+}
+.Blogcard img{
+    width:100%;
+    justify-content: center;
+}
+.Blogcard p{
+    margin-top: 22px;
+}
+.blogtext a{
+    text-decoration: none;
+    width:90px;
+    padding: 11px;
+    background-color: rgb(13, 241, 13);
+    color: white;
+    position: absolute;
+    cursor: pointer;
+
+}
+/* contact */
+.contactpage{
+    display: flex;
+    justify-content: center;
+
+}
+.contacttext{
+    margin-left: 33px;
+    color: rgb(8, 238, 8);
+    margin-top: 94px;
+    font-size: 32px;
+}
+.contactpage img{
+    width: 60%;
+    margin-right: 33px;
+}
+.contactus{
+    text-align: center;
+
+}
+.contactus input{
+    width: 350px;
+    padding: 8px;
+    height: 33px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    margin-top: 18px;
+}
+.contactus button{
+    width: 370px;
+    height: 45px;
+    color: white;
+    border: none;
+    font-size: 22px;
+    margin-top: 22px;
+    background-color: rgb(24, 234, 13);
+    border-radius: 2px;
+
+
+}
+.contactus button:hover{
+    border: 2px solid purple;
+    background-color: transparent;
+    color: rgb(6, 239, 6);
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    margin-top:33px;
+    padding: 22px;
+    box-shadow: 0px 2px 6px 4px rgb(241, 5, 182) ;
+}
+.footer .footerText{
+    margin-inline: 53px;
+    margin-top: 33px;
+
+}
+.footerText p{
+    margin-top: 11px;
+    
+}
