@@ -3,79 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Video Intro and Next Button</title>
+    <title>Website Intro</title>
     <style>
-        body, html {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden;
+            height: 100vh;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .container {
+        #video-container {
             position: relative;
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
-        #intro-video {
-            position: absolute;
-            top: 0;
-            left: 0;
+        video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        #next-button {
+        #next-btn {
             position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50; /* Green */
-            color: white;
+            bottom: 50px;
+            left: 50px;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: #fff;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
-            animation: wave 1s infinite;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 1;
         }
-        /* On hover, add a darker green color */
-        #next-button:hover {
-            background-color: #45a049;
+        #next-btn:hover {
+            background-color: #218838;
         }
-        @keyframes wave {
-            0% {
-                transform: translateX(-50%) scaleY(1);
-            }
-            50% {
-                transform: translateX(-50%) scaleY(1.1);
-            }
-            100% {
-                transform: translateX(-50%) scaleY(1);
-            }
+        #play-pause-btn {
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
+        #play-pause-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        #play-pause-btn img {
+            width: 20px;
+            height: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <video id="intro-video" autoplay muted loop>
-            <source src="rockstar.mp4" type="video/mp4">
+    <div id="video-container">
+        <video id="intro-video" src="yyyyy.mp4" autoplay >
             Your browser does not support the video tag.
         </video>
-        <button id="next-button" onclick="scrollToContent()"><a href="index1.html">Next</a></button>
-    </div>
-
-    <!-- Placeholder content -->
-    <div id="content" style="display: none;">
-        <h1>Welcome to Our Website!</h1>
-        <p>This is some placeholder content. You can replace it with your actual website content.</p>
+        <button id="next-btn">Next</button>
+        <button id="play-pause-btn">
+            <img id="play-pause-icon" src="u.jpg" alt="Play">
+        </button>
     </div>
 
     <script>
-        function scrollToContent() {
-            // Scroll to the content section when the next button is clicked
-            document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
+        // Check if it's the first visit to the intro page
+        if (!sessionStorage.getItem('introVisited')) {
+            // Set the 'introVisited' flag in sessionStorage
+            sessionStorage.setItem('introVisited', 'true');
         }
+
+        // Get references to elements
+        const introVideo = document.getElementById('intro-video');
+        const nextButton = document.getElementById('next-btn');
+        const playPauseButton = document.getElementById('play-pause-btn');
+        const playPauseIcon = document.getElementById('play-pause-icon');
+
+        // Function to play or pause the video
+        function togglePlayPause() {
+            if (introVideo.paused) {
+                introVideo.play();
+                playPauseIcon.src = "u.jpg";
+            } else {
+                introVideo.pause();
+                playPauseIcon.src = "u.jpg";
+            }
+        }
+
+        // Function to play next page preview
+        function playNextPage() {
+            // Redirect to the next page
+            window.location.href = 'index1.html';
+        }
+
+        // Add event listener to the Next button
+        nextButton.addEventListener('click', playNextPage);
+
+        // Add event listener to the play/pause button
+        playPauseButton.addEventListener('click', togglePlayPause);
+
+        // Listen for video end event
+        introVideo.addEventListener('ended', function() {
+            // Automatically play next page preview when the video ends
+            playNextPage();
+        });
     </script>
 </body>
 </html>
-
